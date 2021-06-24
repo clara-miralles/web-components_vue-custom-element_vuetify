@@ -8,20 +8,26 @@
         string-prop="123"
         boolean-prop="false"
         number-prop="123"
-        long-prop-name="long name">
+        long-prop-name="long name"
+      >
       </demo-basic>
+      <side-menu 
+      >
+      </side-menu>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import DemoBasic from './components/demo-basic';
+import DemoBasic from "./components/demo-basic";
+import SideMenu from "./components/eewc-navigation-sidebar";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     DemoBasic,
+    SideMenu
   },
 
   data: () => ({
