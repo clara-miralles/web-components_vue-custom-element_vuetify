@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import sideBarData from "./services/sidebarService";
+
 export default {
   name: "SideMenu",
   props: {
@@ -21,6 +23,7 @@ export default {
       type: String,
     }
   },
+  data: sideBarData
 };
 </script>
 
