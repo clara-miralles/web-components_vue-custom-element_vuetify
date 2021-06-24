@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import sidebarData from "./services/sidebarService";
+import sidebarData from ".././services/sidebarService";
 
 export default {
   name: "SideMenu",
