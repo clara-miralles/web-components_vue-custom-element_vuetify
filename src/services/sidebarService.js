@@ -1,32 +1,33 @@
 const sidebarData = { 
- navigationItems : [ 
+ testing: "testing",
+ menus: [ 
   { 
-   id: "dashboard",
-   name: "dashboard",
+   endpoint: "dashboard",
+   title: "dashboard",
   },
   {
-   id: "layouts",
-   name: "layouts"
+   endpoint: "layouts",
+   title: "layouts"
   },
   {
-   id: "tags,",
-   name: "tags,"
+   endpoint: "tags,",
+   title: "tags,"
   },
   {
-   id: "map",
-   name: "map"
+   endpoint: "map",
+   title: "map"
   },
   {
-   id: "users",
-   name: "users"
+   endpoint: "users",
+   title: "users"
   },
   {
-   id: "archive",
-   name: "archive"
+   endpoint: "archive",
+   title: "archive"
   },
   {
-   id: "downloads",
-   name: "downloads"
+   endpoint: "downloads",
+   title: "downloads"
   }
  ]
 }
