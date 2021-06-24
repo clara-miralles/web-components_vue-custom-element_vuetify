@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>{{ message }}</h4>
+    <h4 class="text-center">{{ message }}</h4>
 
     <el-table :data="tableData">
       <el-table-column prop="prop" label="Prop name"></el-table-column>
@@ -32,7 +32,7 @@
     },
     data() {
       return {
-        message: 'Hello Vue-custom-element!'
+        message: 'Hello Vue-custom-element! (with a vuetify class!)'
       };
     },
     computed: {
