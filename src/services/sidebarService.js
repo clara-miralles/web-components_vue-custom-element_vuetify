@@ -1,4 +1,4 @@
-const sideBarData = { 
+const sidebarData = { 
  navigationItems : [ 
   { 
    id: "dashboard",
@@ -31,4 +31,4 @@ const sideBarData = {
  ]
 }
 
-export default sideBarData;
+export default sidebarData;
