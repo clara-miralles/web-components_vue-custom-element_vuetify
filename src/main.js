@@ -15,4 +15,4 @@ new Vue({
 Vue.config.ignoredElements = ["demo-basic"]; //to avoid warning element not registered.
 Vue.customElement("demo-basic", DemoBasic); // shadowDOM.
 
-<script src="path/to/vue-custom-element.js"></script>
+<script src="./eewc-app.vue"></script>
