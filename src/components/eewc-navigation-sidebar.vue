@@ -9,38 +9,16 @@
 </template>
 
 <script>
-// import sidebarData from ".././services/sidebarService";
 
 export default {
   name: "SideMenu",
-  data() {
-      return {
-        menus: [ 
-          { 
-            title: "dashboard",
-          },
-          {
-            title: "layouts"
-          },
-          {
-            title: "tags,"
-          },
-          {
-            title: "map"
-          },
-          {
-            title: "users"
-          },
-          {
-            title: "archive"
-          },
-          {
-            title: "downloads"
-          }
-        ]
-      };
-    },
-
+  props: {
+    menus: {
+      type: Array,
+      required: true
+    }
+  }
+ 
 };
 </script>
 

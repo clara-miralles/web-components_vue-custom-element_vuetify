@@ -2,6 +2,7 @@
   <v-app>
     <v-main>
       <side-menu
+      :menus="menusData"
       >
       </side-menu>
     </v-main>
@@ -18,8 +19,10 @@ export default {
     SideMenu
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      menusData: ["dashboard", "layouts", "tags,", "map", "users", "archive", "downloads"]
+    }
+  },
 };
 </script>
