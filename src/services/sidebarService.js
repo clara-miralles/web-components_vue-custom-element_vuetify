@@ -1,5 +1,5 @@
 const sidebarData = { 
- menus: ["dashboard", "layouts", "tags,", "map", "users", "archive", "downloads"]
+ menus: ["dashboard", "layouts", "tags,", "map", "users", "archive", "downloads"],
 }
 
 export default sidebarData;

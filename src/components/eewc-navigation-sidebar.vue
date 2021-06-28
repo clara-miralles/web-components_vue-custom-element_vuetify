@@ -7,6 +7,16 @@
     floating
     width="250"
   >
+   <div class="mr-md-5 mr-sm-0 cursorPointer" @click="$emit('logoClick')">
+      <v-img
+        contain
+        :max-width="logoWidthComputed"
+        :max-height="logoHeightComputed"
+        style="box-sizing: border-box;"
+        :src="logo"
+      ></v-img>
+    </div>
+    <v-spacer></v-spacer>
 
   <v-divider v-if="!$vuetify.breakpoint.smAndDown && showName"></v-divider>
     
@@ -39,25 +49,47 @@ export default {
     menus: {
       type: Array,
       required: true
+    },
+    logo: {
+      type: String,
+      required: true
+    },
+    logoWidth: {
+      type: Number,
+      required: false
+    },
+    logoHeight: {
+      type: Number,
+      required: false
     }
   },
   data(){
     return {
 
     }
-  }
+  },
+  computed: {
+    logoHeightComputed() {
+      return this.logoHeight ? this.logoHeight : "50px";
+    },
+
+    logoWidthComputed() {
+      return this.logoWidth ? this.logoWidth : "180px";
+    },
+  },
  
 };
 </script>
 
 <style lang="scss" scoped>
 .side-menu-selected-item {
-  background-color: #eeeeee;
+  background-color: #212A34;
   font-weight: 600;
   border-radius: 0 !important;
 }
 .side-navigation-drawer {
   top: 70px !important;
+  background-color: #212A34 !important;
 }
 .item-icon {
   width: 50px;
