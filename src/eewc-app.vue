@@ -11,6 +11,7 @@
 
 <script>
 import SideMenu from "./components/eewc-navigation-sidebar";
+import sidebarData from "../src/services/sidebarService";
 
 export default {
   name: "App",
@@ -21,8 +22,8 @@ export default {
 
   data() {
     return {
-      menusData: ["dashboard", "layouts", "tags,", "map", "users", "archive", "downloads"]
+      menusData: sidebarData.menus
     }
   },
-};
+}
 </script>

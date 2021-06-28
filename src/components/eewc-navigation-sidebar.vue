@@ -4,6 +4,7 @@
           v-for="menu in menus"
           :key="menu.title"
         >
+        {{menu}}
       </v-list-item>
     </v-list>
 </template>
@@ -16,6 +17,11 @@ export default {
     menus: {
       type: Array,
       required: true
+    }
+  },
+  data(){
+    return {
+      
     }
   }
  
