@@ -20,24 +20,46 @@
 
   <v-divider v-if="!$vuetify.breakpoint.smAndDown && showName"></v-divider>
     
-    <v-list class="pa-0">
-      <v-list-item
-        :ripple="false"
-        v-for="(menu, index) in menus"
-        class="side-menu mb-0 pa-0"
-        :class="{ 'side-menu-selected-item': menu.endpoint === currentEndpoint }"
-        tile
-        :key="index"
-        @click="$emit('itemSelected', menu)"
-      >
-        <v-list-item-icon class="item-icon">
-          <v-icon size="14" class="primary--text" v-html="menu.icon"></v-icon>
+  <v-list class="pa-0">
+    <v-list-group
+      :value="true"
+      prepend-icon="mdi-account-circle"
+    >
+    <v-list-item v-for="(menu, index) in menus" :key="index">
+        <v-list-item-icon>
+          <v-icon class="list-item__icon">mdi-home</v-icon>
         </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title class="primary--text menu-text text-uppercase">{{ menu }}</v-list-item-title>
-        </v-list-item-content>
+
+        <v-list-item-title 
+          :ripple="false"
+          class="list-item__title">{{ menu }}
+          
+           <v-list-group
+            :value="true"
+            no-action
+            sub-group
+           >
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title v-for="(layout, index) in layouts"  :key="index" class="list-item__suboption">
+                  {{ layout }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </template>
+          </v-list-group>
+        
+        </v-list-item-title>
       </v-list-item>
-    </v-list>
+
+     
+    </v-list-group>
+  </v-list>
+
+    <div v-if="helpCenter" class="help-center"> 
+      <v-icon>{{ helpIcon }}</v-icon>
+      {{ helpCenter }} 
+    </div> 
+
   </v-navigation-drawer>
 </template>
 
@@ -61,6 +83,18 @@ export default {
     logoHeight: {
       type: Number,
       required: false
+    },
+    helpCenter: {
+      type: String,
+      required: false
+    },
+    helpIcon: {
+      type: String,
+      required: false
+    },
+    layouts: {
+      type: Array,
+      required: true
     }
   },
   data(){
@@ -111,6 +145,22 @@ export default {
   width: 102%;
   border-radius: 0 !important;
 }
+.help-center {
+  color: white;
+}
+
+.list-item__suboption {
+  color: white;
+}
+
+.list-item__icon {
+  color: white !important;
+}
+
+.list-item__title{
+  color: white !important;
+}
+
 </style>
 
 
