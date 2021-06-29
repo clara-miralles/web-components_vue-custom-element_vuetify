@@ -39,10 +39,11 @@
         :value="true"
         no-action
         sub-group
+        
         >
         <template v-slot:activator>
-          <v-list-item-content>
-            <v-list-item-title v-for="(menu, index) in menus"  :key="index" class="list-item__suboption">
+          <v-list-item-content v-if="menu.subOption!=''">
+            <v-list-item-title class="list-item__suboption">
               {{ menu.subOption }}
             </v-list-item-title>
           </v-list-item-content>
