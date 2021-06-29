@@ -6,7 +6,7 @@
       :logo="logoData"
       :helpCenter="helpCenterData"
       :helpIcon="helpIconData"
-      :layouts="layoutsData"
+      :name="nameData"
       >
       </side-menu>
     </v-main>
@@ -32,7 +32,7 @@ export default {
       logoData: logo_een,
       helpCenterData: sidebarData.helpCenter,
       helpIconData: help_icon ,
-      layoutsData: sidebarData.layoutsOptions
+      nameData: sidebarData.name
     }
   },
 }

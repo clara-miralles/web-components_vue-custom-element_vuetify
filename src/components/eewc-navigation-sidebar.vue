@@ -16,49 +16,50 @@
         :src="logo"
       ></v-img>
     </div>
-    <v-spacer></v-spacer>
+    
 
-  <v-divider v-if="!$vuetify.breakpoint.smAndDown && showName"></v-divider>
+  <v-divider class="sidebar__divider"></v-divider>
     
   <v-list class="pa-0">
     <v-list-group
       :value="true"
-      prepend-icon="mdi-account-circle"
+      class="sidebar__list-group"
+      v-for="(menu, index) in menus" :key="index"
     >
-    <v-list-item v-for="(menu, index) in menus" :key="index">
-        <v-list-item-icon>
-          <v-icon class="list-item__icon">mdi-home</v-icon>
-        </v-list-item-icon>
+      <template v-slot:activator>
+        <v-list-item>
+            <v-list-item-title 
+              :ripple="false"
+              class="list-item__title">{{ menu.title }}
+            </v-list-item-title>
+        </v-list-item>
+      </template>
 
-        <v-list-item-title 
-          :ripple="false"
-          class="list-item__title">{{ menu }}
-          
-           <v-list-group
-            :value="true"
-            no-action
-            sub-group
-           >
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title v-for="(layout, index) in layouts"  :key="index" class="list-item__suboption">
-                  {{ layout }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </template>
-          </v-list-group>
-        
-        </v-list-item-title>
-      </v-list-item>
-
-     
+      <v-list-group
+        :value="true"
+        no-action
+        sub-group
+        >
+        <template v-slot:activator>
+          <v-list-item-content>
+            <v-list-item-title v-for="(menu, index) in menus"  :key="index" class="list-item__suboption">
+              {{ menu.subOption }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </template>
+      </v-list-group>
     </v-list-group>
   </v-list>
 
-    <div v-if="helpCenter" class="help-center"> 
-      <v-icon>{{ helpIcon }}</v-icon>
-      {{ helpCenter }} 
-    </div> 
+  <v-btn text v-if="helpCenter" class="sidebar__help-center">
+    {{ helpCenter }} 
+  </v-btn>
+  
+  <v-divider class="sidebar__divider"></v-divider>
+
+   <v-btn text v-if="name" class="sidebar__name">
+    {{ name }} 
+  </v-btn>
 
   </v-navigation-drawer>
 </template>
@@ -92,14 +93,14 @@ export default {
       type: String,
       required: false
     },
-    layouts: {
-      type: Array,
-      required: true
+    name: {
+      type: String,
+      required: false
     }
   },
   data(){
     return {
-
+  
     }
   },
   computed: {
@@ -145,21 +146,20 @@ export default {
   width: 102%;
   border-radius: 0 !important;
 }
-.help-center {
-  color: white;
-}
 
-.list-item__suboption {
-  color: white;
-}
-
-.list-item__icon {
+.list-item__suboption, .list-item__icon, .list-item__title, .sidebar__help-center, .sidebar__name, .sidebar__divider {
   color: white !important;
 }
 
-.list-item__title{
-  color: white !important;
+.sidebar__list-group {
+ 
 }
+
+.v-list-item__title {
+
+}
+
+
 
 </style>
 
